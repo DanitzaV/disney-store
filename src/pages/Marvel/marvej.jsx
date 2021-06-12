@@ -1,12 +1,12 @@
 import React from 'react'
 import { Layout } from '../../components'
 
-const Home = () => {
+const Marvel = () => {
     return(
-        <Layout title="categoria: ">
-            <p>Home</p>
+        <Layout title="Page">
+            Marvel
         </Layout>
     )
 }
 
-export { Home } 
+export { Marvel } 
