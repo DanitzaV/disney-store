@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Header = () => {
+const Footer = () => {
     return (
-        <footer>Footer</footer>
+        <footer>Footer 2</footer>
     )
 }
 
-export { Header }
+export { Footer }
