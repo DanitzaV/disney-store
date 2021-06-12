@@ -1,11 +1,15 @@
 import React from 'react'
+import { Nav, Links, Cart} from './headerComponents'
+
+import logo from '../../../images/logo-disney.png'
 import './navbar.css'
+
 
 const Header = () => {
     return (
-        <nav className="navbar">
-            <div className="left">
-               <p>logo</p>
+        <Nav>
+            <Links>
+               <img src={logo}/>
                <ul>
                <li>
                    Marvel
@@ -17,13 +21,13 @@ const Header = () => {
                    Disney
                </li>
            </ul>
-           </div>
+           </Links>
            
            
-           <div className="left">
+           <Cart>
                <p>carrito</p>
-           </div>
-        </nav>
+           </Cart>
+        </Nav>
     )
 }
 
