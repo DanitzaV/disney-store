@@ -28,7 +28,13 @@ export const Links = styled.div`
     }
 `;
 
-export const Cart = styled.div`
+export const CartWidget = styled.div`
     display: flex;
     align-items: center;
+
+    svg {
+        width: 1.4em;
+        height: 1.4em;
+        cursor: pointer;
+    }
 `;

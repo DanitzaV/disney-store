@@ -1,8 +1,8 @@
 import React from 'react'
-import { Nav, Links, Cart} from './headerComponents'
-
+import { Nav, Links, CartWidget} from './headerComponents'
+import { HiShoppingCart } from 'react-icons/hi'
 import logo from '../../../images/logo-disney.png'
-import './navbar.css'
+
 
 
 const Header = () => {
@@ -24,9 +24,9 @@ const Header = () => {
            </Links>
            
            
-           <Cart>
-               <p>carrito</p>
-           </Cart>
+           <CartWidget>
+               <HiShoppingCart />
+           </CartWidget>
         </Nav>
     )
 }
