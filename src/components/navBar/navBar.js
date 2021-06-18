@@ -1,11 +1,11 @@
 import React from 'react'
-import { Nav, Links, CartWidget} from './headerComponents'
+import { Nav, Links, CartWidget} from './navBarComponents'
 import { HiShoppingCart } from 'react-icons/hi'
-import logo from '../../../images/logo-disney.png'
+import logo from '../../images/logo-disney.png'
 
 
 
-const Header = () => {
+export const NavBar = () => {
     return (
         <Nav>
             <Links>
@@ -30,5 +30,3 @@ const Header = () => {
         </Nav>
     )
 }
-
-export { Header }
