@@ -31,7 +31,7 @@ export const ItemListCard = styled.div `
         width: 100%;
     }
     a:hover, a:focus, a:focus-within {
-        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        box-shadow: rgb(0 0 0 / 8%) 0px 40px 58px -16px, rgb(0 0 0 / 41%) 0px 30px 22px -10px;
         transform: scale(1.05, 1.05) translateZ(0px) translate3d(0px, 0px, 0px);
         transition-duration: 300ms;
         transition-property: transform, box-shadow;

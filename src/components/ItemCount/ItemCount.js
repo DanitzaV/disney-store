@@ -25,8 +25,8 @@ export const ItemCount = ({stock, initial, onAdd})  => {
           <p className="num-items">{clicks}</p>
           <button onClick={() => onAddItem()}>+</button>
         </div>
-        <button className="btn-agregar">
-          Añadir
+        <button disabled={stock === 0} className="btn-agregar">
+          {stock == 0 ? "Sin Stock": "Añadir"} 
         </button>
     </ItemCountContainer>
   ); 
