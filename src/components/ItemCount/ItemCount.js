@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { ItemCountContainer } from './ItemCountStyle'
 
-export const ItemCount = ({stock, initial})  => {
+export const ItemCount = ({stock, initial, onAdd})  => {
   const [clicks, setClicks] = useState(initial);
 
-  const onAdd = () => {
+  const onAddItem = () => {
       if(clicks < stock) {
         let accumulatedClicks = clicks + 1;
         setClicks(accumulatedClicks);
       }
   };
 
-  const onRest = () => {
+  const onRestItem = () => {
     let accumulatedClicksResta = clicks - 1;
     if (accumulatedClicksResta >= initial) {
       setClicks(accumulatedClicksResta);
@@ -21,11 +21,11 @@ export const ItemCount = ({stock, initial})  => {
   return (
     <ItemCountContainer>
         <div className="btn-actions">
-          <button onClick={() => onRest()}>-</button>
+          <button onClick={() => onRestItem()}>-</button>
           <p className="num-items">{clicks}</p>
-          <button onClick={() => onAdd()}>+</button>
+          <button onClick={() => onAddItem()}>+</button>
         </div>
-        <button className="btn-agregar" onClick={() => setClicks(initial)}>
+        <button className="btn-agregar">
           Añadir
         </button>
     </ItemCountContainer>
