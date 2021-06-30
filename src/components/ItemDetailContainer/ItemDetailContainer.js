@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { ItemListCard } from './itemsListComponents'
-import { ItemList } from '../ItemList/ItemList'
+import { ItemDetail } from '../ItemDetail/ItemDetail';
 
-export const ItemListContainer = ({greeting, children}) => {
+export const ItemDetailContainer = () => {
         const [peliculas, setPeliculas] = useState("buscando pelis...");
         useEffect(() => {
             const items = [{
@@ -29,18 +28,26 @@ export const ItemListContainer = ({greeting, children}) => {
             }, 2000);
           })
 
-          getPeliculas.then((pelis)=> {
+          const getItems  = async () => {
+            const resultado =  await getPeliculas;
+            return resultado
+          }
+          
+          getItems().then((pelis)=> {
             //console.log(peliculas)
             setPeliculas(pelis)
           }, err => {
             console.log("uy uy error")
-          })
+          }) 
         
       }, []);
 
+
     return(
-        <ItemListCard>
-            <ItemList items={peliculas}/>
-        </ItemListCard>
+        <>
+       
+       <p>EL DETALLE DE ITEMS</p>
+       <ItemDetail item={peliculas} />
+       </>
     )
 }
