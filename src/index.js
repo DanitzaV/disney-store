@@ -1,11 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Home } from './pages/Home/Home'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { NavBar } from "./components/navBar/navBar";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Router>
+        <NavBar />
+        <Switch>
+        <Route exact path="/">
+            <ItemListContainer />
+          </Route>
+          <Route exact path="/category/:id">
+            <ItemListContainer />
+          </Route>
+          <Route exact path="/item/:id">
+            <ItemDetailContainer />
+          </Route>
+        </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
