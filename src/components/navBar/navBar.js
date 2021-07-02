@@ -19,7 +19,7 @@ export const NavBar = () => {
                    Marvel
                </li>
                </NavLink>
-               <NavLink className="link" activeClassName="link-active" to={`/category/Pixar`}>   
+               <NavLink className="link" activeClassName="link-active" to={`/category/pixar`}>   
                <li>
                    Pixar
                </li>
