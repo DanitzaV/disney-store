@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Item = ({item})  => {
 
@@ -12,9 +13,9 @@ export const Item = ({item})  => {
 
   return (
         <div key={item.id}>
-            <a>
+            <Link to={`/item/${item.id}`}>
                 <img src={item.pictureUrl} />
-            </a>
+            </Link>
             <p className="name-card">{item.title } ({item.duration})</p>
             <p>Price: $ {addZero(item.price) }</p>
         </div>
