@@ -7,7 +7,7 @@ export const ItemList = ({items, category})  => {
     {
        typeof items !== "string" ? (
         items
-        .filter((e) => e.category === category )
+        .filter((e) => e.category === category || category === undefined)
         .map((e) =>  (
            <Item item={e}/>
         ))
