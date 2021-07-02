@@ -1,8 +1,9 @@
+import { useParams } from 'react-router-dom'
 import { ItemCount } from '../ItemCount/ItemCount'
 
 export const ItemDetail = ({item})  => {
-
-    console.log(item)
+    const { id } =  useParams()
+    console.log("dsad",id)
     const addZero = (num) => {
         let number = num.toString();
         let decimal = (number.length < 2) ? `${number}.000` :
@@ -16,7 +17,8 @@ return (
     {
         console.log(item),
         typeof item !== "string" ? (
-            item.map((item) =>  (
+            item.filter((item) => item.id === id)
+            .map((item) =>  (
                 <div key={item.id} class="item-detail">
                     <div>
                     <a>

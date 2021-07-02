@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export const Item = ({item})  => {
-
         const addZero = (num) => {
             let number = num.toString();
             let decimal = (number.length < 2) ? `${number}.000` :

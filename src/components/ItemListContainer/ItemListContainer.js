@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import { ItemListCard } from './itemsListComponents'
 import { ItemList } from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
 
 export const ItemListContainer = ({greeting, children}) => {
+        const { id } = useParams()
+        console.log("catego", id)
         const [peliculas, setPeliculas] = useState("buscando pelis...");
         useEffect(() => {
             const items = [{
                 id: '1', 
                 title: "IRON MAN", 
                 duration: "3 hrs",
+                category: "marvel",
                 price: 8.000,
                 description: "Después de sobrevivir a un ataque inesperado en territorio enemigo, el empresario industrial de vida glamorosa, Tony Stark, construye un traje de alta tecnología y jura proteger al mundo como Iron Man.",
                 pictureUrl: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5B5F22E0E37CF72BA1D2E1A8778BA6100C4ED9AC22245DFD8C84AE814DC63F8B/scale?width=400&aspectRatio=1.78&format=jpeg",
                 año: "2020" },
                 {
                     id: '2', 
-                    title: "LOKI", 
+                    title: "LOKI",
+                    category: "marvel",
                     duration: "1 Temporada",
                     price: 12.000,
                     description: "Luego de recoger el teseracto en 'Avengers: Endgame', Loki es llamado a comparecer ante la Autoridad de Variación Temporal (AVT), una organización burocrática kafkiana que existe fuera del tiempo y el espacio.",
@@ -40,7 +45,7 @@ export const ItemListContainer = ({greeting, children}) => {
 
     return(
         <ItemListCard>
-            <ItemList items={peliculas}/>
+            <ItemList items={peliculas} category={id}/>
         </ItemListCard>
     )
 }
